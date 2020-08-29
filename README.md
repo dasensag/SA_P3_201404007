@@ -1,4 +1,4 @@
-# P3 Software Avanzado
+# P4 Software Avanzado
 
 SAO App simulating a crowdsourcing restaurant app.
 
@@ -35,11 +35,11 @@ POST /order
 
 Recieves a new order
 
-GET
+GET /order
 
 Checks order status
 
-PUT 
+PUT /order
 
 Marks as sended to delivery
 
@@ -49,10 +49,10 @@ POST /delivery
 
 Recieves a new delivery
 
-GET
+GET /delivery
 
 Checks delivery status
 
-PUT
+PUT /delivery
 
 Marks as delivered
