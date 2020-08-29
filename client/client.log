@@ -1,0 +1,9 @@
+08:20:56.813 INFO  Client APP started on port 3001 
+08:21:15.280 INFO  POST /order {"order_id":1,"product":"a0071RKUjYC0","status":"Preparing"} 
+08:21:24.563 INFO  GET /order/1 {"order_id":1,"product":"a0071RKUjYC0","status":"Preparing"} 
+08:22:29.311 INFO  GET /order/1 {"order_id":1,"product":"a0071RKUjYC0","status":"Sended to delivery"} 
+08:22:41.652 INFO  GET /order/1 {"order_id":1,"product":"a0071RKUjYC0","status":"Sended to delivery"} 
+08:23:32.635 INFO  GET /order/1 {"order_id":1,"product":"a0071RKUjYC0","status":"Sended to delivery"} 
+08:23:38.520 INFO  POST /order {"order_id":2,"product":"agAOd1nlEgGz","status":"Preparing"} 
+08:23:46.544 INFO  GET /order/2 {"order_id":2,"product":"agAOd1nlEgGz","status":"Preparing"} 
+05:00:55.340 INFO  GET /order/2 {"order_id":2,"product":"agAOd1nlEgGz","status":"Sended to delivery"} 

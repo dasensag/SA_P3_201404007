@@ -9,11 +9,11 @@ It has three microservices apps:
 
 # Requirements
 
-npm install express --save
-npm install simple-node-logger --save
-npm install body-parser --save
-npm install axios --save
-npm install randomstring --save
+* npm install express --save
+* npm install simple-node-logger --save
+* npm install body-parser --save
+* npm install axios --save
+* npm install randomstring --save
 
 # Client
 

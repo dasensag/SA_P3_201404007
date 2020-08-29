@@ -1,0 +1,5 @@
+08:20:32.341 INFO  Delivery APP started on port 5001 
+08:22:07.681 INFO  POST /delivery {"order_id":"1","status":"On its way"} 
+08:23:04.804 INFO  PUT /delivery/1 {"order_id":"1","status":"Delivered"} 
+05:00:44.339 INFO  POST /delivery {"order_id":"2","status":"On its way"} 
+05:01:04.781 INFO  PUT /delivery/2 {"order_id":"2","status":"Delivered"} 
