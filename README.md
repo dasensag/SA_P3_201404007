@@ -1,13 +1,17 @@
 # P4 Software Avanzado
 
-SAO App simulating a crowdsourcing restaurant app.
+Service orchestration with a simple ESB. Usage video: https://drive.google.com/file/d/1PcQWME38GsjrHny0bTfW4dRC0Gtxi5Cf/view?usp=sharing
 
-It has three microservices apps:
-* Restaurant
-* Client
-* Deliver
+### Microservices
 
-# Requirements
+* **Client:** Sends orders to restaurant, checks order and delivery status.
+* **Restaurant:** Recieves orders from client and gives status. Can send orders to deliver.
+* **Deliver:** Recieves orders to deliver from restaurant and gives status to client. Can notify when order is delivered.
+* **ESB:** Routes requests between the other microservices.
+
+## Requirements
+
+The microservices and EBS are Node JS API with express. To use install the following dependencies:
 
 * npm install express --save
 * npm install simple-node-logger --save
@@ -15,44 +19,46 @@ It has three microservices apps:
 * npm install axios --save
 * npm install randomstring --save
 
-# Client
+## Services 
 
-POST /order
+### Client
+
+**POST /order**
 
 Creates a new order
 
-GET /order/$orderID
+**GET /order/{orderID}**
 
 Checks order status
 
-GET /delivery/$orderID
+**GET /delivery/{orderID}**
 
 Checks delivery status
 
-# Restaurant 
+### Restaurant 
 
-POST /order
+**POST /order**
 
 Recieves a new order
 
-GET /order
+**GET /order/{orderID}**
 
 Checks order status
 
-PUT /order
+**PUT /delivery/{orderID}**
 
-Marks as sended to delivery
+Sends order to delivery
 
-# Delivery
+### Delivery
 
-POST /delivery
+**POST /delivery**
 
 Recieves a new delivery
 
-GET /delivery
+**GET /delivery/{orderID}**
 
 Checks delivery status
 
-PUT /delivery
+**PUT /delivery/{orderID}**
 
-Marks as delivered
+Marks order as delivered

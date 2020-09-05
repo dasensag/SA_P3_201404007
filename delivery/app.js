@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const port = 5001
+const port = 5000
 
 const log = require('simple-node-logger').createSimpleLogger('delivery.log');
 
@@ -35,5 +35,5 @@ app.put('/delivery/:order_id', jsonParser, (req, res) => {
 })
 
 app.listen(port, () => {
-    log.info('Delivery APP started on port ', port);
+    log.info('Delivery API listening on port ', port);
 })

@@ -9,40 +9,43 @@ const log = require('simple-node-logger').createSimpleLogger('esb.log');
 // create application/json parser
 var jsonParser = bodyParser.json()
 
-// order database
-var order_count = 0
-var orders = {}
+app.get('/order/:orderId', (req, res) => {
+    axios.get('http://localhost:4000/order/' + req.params.orderId).then(function (response) {
+        log.info('GET /order/', req.params.orderId, ' ', response.data);
+        res.json(response.data);
+    });
+})
 
 app.post('/order', jsonParser, function (req, res) {
-    order_count++;
-    order = { 'order_id': order_count, 'product': req.body.product, 'status':'Preparing' }
-    orders[order_count] = order;
-
-    log.info('POST /order ', order);
-
-    res.json(order);
-})
-
-app.get('/order/:orderId', jsonParser, (req, res) => {
-    log.info('GET /order/', req.params.orderId, ' ', orders[req.params.orderId]);
-
-    res.json(orders[req.params.orderId]);
-})
-
-app.put('/order/:orderId', jsonParser, (req, res) => {
-    var json = JSON.stringify({ 'order_id': req.params.orderId });
-    axios.post('http://localhost:5001/delivery', json, {
+    //var json = JSON.stringify({ 'product': randomstring.generate(12) });
+    axios.post('http://localhost:4000/order', req.body, {
         headers: {
             'Content-Type': 'application/json'
         }
     }).then(function (response) {
-        orders[req.params.orderId]['status'] = 'Sended to delivery';
-        log.info('Delivery APP: POST /delivery ', response.data);
-        log.info('PUT /order/', req.params.orderId, ' ', orders[req.params.orderId]);
-        res.json(orders[req.params.orderId]);
+        log.info('POST /order ', response.data);
+        res.json(response.data);
+    });
+})
+
+app.get('/delivery/:orderId', (req, res) => {
+    axios.get('http://localhost:5000/delivery/' + req.params.orderId).then(function (response) {
+        log.info('GET /order/', req.params.orderId, ' ', response.data);
+        res.json(response.data);
+    });
+})
+
+app.post('/delivery', jsonParser, (req, res) => {
+    axios.post('http://localhost:5000/delivery', req.body, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(function (response) {
+        log.info('PUT /order/', req.params.orderId, ' ', response.data);
+        res.json(response.data);
     });
 })
 
 app.listen(port, () => {
-    log.info('Restaurant APP started on port ', port);
+    log.info('EBS started on port ', port);
 })
