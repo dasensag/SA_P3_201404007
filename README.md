@@ -1,6 +1,10 @@
 # P4 Software Avanzado
 
-Service orchestration with a simple ESB. Usage video: https://drive.google.com/file/d/1PcQWME38GsjrHny0bTfW4dRC0Gtxi5Cf/view?usp=sharing
+Service orchestration with a simple ESB. 
+
+### Usage example video
+
+https://drive.google.com/file/d/1PcQWME38GsjrHny0bTfW4dRC0Gtxi5Cf/view?usp=sharing
 
 ### Microservices
 
@@ -19,9 +23,9 @@ The microservices and EBS are Node JS API with express. To use install the follo
 * npm install axios --save
 * npm install randomstring --save
 
-## Services 
+# Services 
 
-### Client
+## Client
 
 **POST /order**
 
@@ -35,7 +39,7 @@ Checks order status
 
 Checks delivery status
 
-### Restaurant 
+## Restaurant 
 
 **POST /order**
 
@@ -49,7 +53,7 @@ Checks order status
 
 Sends order to delivery
 
-### Delivery
+## Delivery
 
 **POST /delivery**
 
