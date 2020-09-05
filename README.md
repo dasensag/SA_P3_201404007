@@ -10,7 +10,7 @@ https://drive.google.com/file/d/1PcQWME38GsjrHny0bTfW4dRC0Gtxi5Cf/view?usp=shari
 
 * **Client:** Sends orders to restaurant, checks order and delivery status.
 * **Restaurant:** Recieves orders from client and gives status. Can send orders to deliver.
-* **Deliver:** Recieves orders to deliver from restaurant and gives status to client. Can notify when order is delivered.
+* **Delivery:** Recieves orders to deliver from restaurant and gives status to client. Can notify when order is delivered.
 * **ESB:** Routes requests between the other microservices.
 
 ## Requirements
