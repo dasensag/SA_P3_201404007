@@ -43,7 +43,7 @@ Checks delivery status
 
 **POST /order**
 
-Recieves a new order
+Recieves an order
 
 **GET /order/{orderID}**
 
@@ -57,12 +57,30 @@ Sends order to delivery
 
 **POST /delivery**
 
-Recieves a new delivery
+Recieves an order for delivery
 
 **GET /delivery/{orderID}**
 
-Checks delivery status
+Returns delivery status
 
 **PUT /delivery/{orderID}**
 
-Marks order as delivered
+Updates delivery status to _delivered_
+
+## ESB
+
+**GET /order/{orderID}**
+
+Recieves request to check order status, routes it to `restaurant` and returns response to `client`
+
+**POST /order**
+
+Recieves a new order from client, sends it to `restaurant` and returns response to `client`
+
+**GET /delivery/{orderID}**
+
+Recieves request to check delivery status, sends it to `deivery` and returns response to `client`
+
+**POST /delivery**
+
+Recieves a new delivery from `restaurant`, sends it to `delivery` and returns response to `restaurant`
